@@ -1,6 +1,6 @@
 baseURL: "https://examplesite.com/"
 title: Good-Life Sec
-theme: PaperMod
+theme: ["PaperMod"]
 
 pagination:
   disableAliases: false
