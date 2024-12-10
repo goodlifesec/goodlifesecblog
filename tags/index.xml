@@ -2,36 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Good-Life Sec</title>
-    <link>https://examplesite.com/tags/</link>
+    <link>https://goodlifesec.com/tags/</link>
     <description>Recent content in Tags on Good-Life Sec</description>
     <image>
       <title>Good-Life Sec</title>
-      <url>https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://goodlifesec.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://goodlifesec.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.139.0</generator>
     <language>en</language>
     <lastBuildDate>Wed, 04 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://examplesite.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://goodlifesec.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gophish</title>
-      <link>https://examplesite.com/tags/gophish/</link>
+      <link>https://goodlifesec.com/tags/gophish/</link>
       <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://examplesite.com/tags/gophish/</guid>
+      <guid>https://goodlifesec.com/tags/gophish/</guid>
       <description></description>
     </item>
     <item>
       <title>Nginx</title>
-      <link>https://examplesite.com/tags/nginx/</link>
+      <link>https://goodlifesec.com/tags/nginx/</link>
       <pubDate>Tue, 03 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://examplesite.com/tags/nginx/</guid>
+      <guid>https://goodlifesec.com/tags/nginx/</guid>
       <description></description>
     </item>
     <item>
       <title>Ssl</title>
-      <link>https://examplesite.com/tags/ssl/</link>
+      <link>https://goodlifesec.com/tags/ssl/</link>
       <pubDate>Tue, 03 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://examplesite.com/tags/ssl/</guid>
+      <guid>https://goodlifesec.com/tags/ssl/</guid>
       <description></description>
     </item>
   </channel>

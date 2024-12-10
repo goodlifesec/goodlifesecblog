@@ -2,34 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://examplesite.com/categories/</loc>
+    <loc>https://goodlifesec.com/categories/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://examplesite.com/</loc>
+    <loc>https://goodlifesec.com/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://examplesite.com/tags/gophish/</loc>
+    <loc>https://goodlifesec.com/tags/gophish/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://examplesite.com/posts/phishpaste/</loc>
+    <loc>https://goodlifesec.com/posts/phishpaste/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://examplesite.com/posts/</loc>
+    <loc>https://goodlifesec.com/posts/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://examplesite.com/categories/reference/</loc>
+    <loc>https://goodlifesec.com/categories/reference/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://examplesite.com/tags/</loc>
+    <loc>https://goodlifesec.com/tags/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://examplesite.com/posts/create-new-ssl-cert-on-gophish&#43;nginx/</loc>
+    <loc>https://goodlifesec.com/posts/create-new-ssl-cert-on-gophish&#43;nginx/</loc>
     <lastmod>2024-12-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://examplesite.com/tags/nginx/</loc>
+    <loc>https://goodlifesec.com/tags/nginx/</loc>
     <lastmod>2024-12-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://examplesite.com/tags/ssl/</loc>
+    <loc>https://goodlifesec.com/tags/ssl/</loc>
     <lastmod>2024-12-03T00:00:00+00:00</lastmod>
   </url>
 </urlset>
