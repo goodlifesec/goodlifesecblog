@@ -1,0 +1,89 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Create new SSL cert on gophish+nginx | Good-Life Sec</title><meta name=keywords content="nginx,ssl,gophish"><meta name=description content='
+login as root on the nginx server
+create a new openssl certificate
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/<<domain>>.key -out /etc/nginx/ssl/<<domain>>.cer
+copy the existing server block to the bottom of the nginx config file at sudo vi /etc/nginx/conf.d/revers-proxy.conf
+update the new block with the new domain name (see below)
+save and quit
+test nginx nginx -t
+Issue the certificate with the command below
+./acme.sh --issue -d <<domain>> --server letsencrypt --nginx
+install certificate with the command below:
+
+.acme.sh/acme.sh --install-cert -d <<domain>> \
+> --key-file /etc/nginx/ssl/<<domain>>.key \
+> --fullchain-file /etc/nginx/ssl/<<domain>>.cer \
+> --reloadcmd "service nginx restart"
+server block
+server {
+        listen 80;
+        server_name <<domain>> www.<<domain>>; ## server name can be replaced by nginx server IP address (ex. 192.168.1.132)
+
+        location / {
+                proxy_pass http://23.138.40.37:80; ## backend-server can be replaced with IP address of web sever to be proxied (ex. http192.168.1.37:80)
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+        listen 443 ssl;
+        ssl_certificate_key /etc/nginx/ssl/<<domain>>.key;
+        ssl_certificate /etc/nginx/ssl/<<domain>>.crt;
+}
+'><meta name=author content="Me"><link rel=canonical href=https://examplesite.com/posts/create-new-ssl-cert-on-gophish+nginx/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.d72444526d7ecbdb0015438a7fa89054a658bf759d0542e2e5df81ce94b493ee.css integrity="sha256-1yREUm1+y9sAFUOKf6iQVKZYv3WdBULi5d+BzpS0k+4=" rel="preload stylesheet" as=style><link rel=icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E><link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E><link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://examplesite.com/posts/create-new-ssl-cert-on-gophish+nginx/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:url" content="https://examplesite.com/posts/create-new-ssl-cert-on-gophish+nginx/"><meta property="og:site_name" content="Good-Life Sec"><meta property="og:title" content="Create new SSL cert on gophish+nginx"><meta property="og:description" content=' login as root on the nginx server create a new openssl certificate sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/<<domain>>.key -out /etc/nginx/ssl/<<domain>>.cer copy the existing server block to the bottom of the nginx config file at sudo vi /etc/nginx/conf.d/revers-proxy.conf update the new block with the new domain name (see below) save and quit test nginx nginx -t Issue the certificate with the command below ./acme.sh --issue -d <<domain>> --server letsencrypt --nginx install certificate with the command below: .acme.sh/acme.sh --install-cert -d <<domain>> \> --key-file /etc/nginx/ssl/<<domain>>.key \> --fullchain-file /etc/nginx/ssl/<<domain>>.cer \> --reloadcmd "service nginx restart" server block server {listen 80;server_name <<domain>> www.<<domain>>; ## server name can be replaced by nginx server IP address (ex. 192.168.1.132)location / {proxy_pass http://23.138.40.37:80; ## backend-server can be replaced with IP address of web sever to be proxied (ex. http192.168.1.37:80)proxy_set_header Host $host;proxy_set_header X-Real-IP $remote_addr;proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;}listen 443 ssl;ssl_certificate_key /etc/nginx/ssl/<<domain>>.key;ssl_certificate /etc/nginx/ssl/<<domain>>.crt;} '><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-12-03T00:00:00+00:00"><meta property="article:modified_time" content="2024-12-03T00:00:00+00:00"><meta property="article:tag" content="Nginx"><meta property="article:tag" content="Ssl"><meta property="article:tag" content="Gophish"><meta property="og:image" content="https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="Create new SSL cert on gophish+nginx"><meta name=twitter:description content='
+login as root on the nginx server
+create a new openssl certificate
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/<<domain>>.key -out /etc/nginx/ssl/<<domain>>.cer
+copy the existing server block to the bottom of the nginx config file at sudo vi /etc/nginx/conf.d/revers-proxy.conf
+update the new block with the new domain name (see below)
+save and quit
+test nginx nginx -t
+Issue the certificate with the command below
+./acme.sh --issue -d <<domain>> --server letsencrypt --nginx
+install certificate with the command below:
+
+.acme.sh/acme.sh --install-cert -d <<domain>> \
+> --key-file /etc/nginx/ssl/<<domain>>.key \
+> --fullchain-file /etc/nginx/ssl/<<domain>>.cer \
+> --reloadcmd "service nginx restart"
+server block
+server {
+        listen 80;
+        server_name <<domain>> www.<<domain>>; ## server name can be replaced by nginx server IP address (ex. 192.168.1.132)
+
+        location / {
+                proxy_pass http://23.138.40.37:80; ## backend-server can be replaced with IP address of web sever to be proxied (ex. http192.168.1.37:80)
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+        listen 443 ssl;
+        ssl_certificate_key /etc/nginx/ssl/<<domain>>.key;
+        ssl_certificate /etc/nginx/ssl/<<domain>>.crt;
+}
+'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://examplesite.com/posts/"},{"@type":"ListItem","position":2,"name":"Create new SSL cert on gophish+nginx","item":"https://examplesite.com/posts/create-new-ssl-cert-on-gophish+nginx/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Create new SSL cert on gophish+nginx","name":"Create new SSL cert on gophish\u002bnginx","description":" login as root on the nginx server create a new openssl certificate sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/\u0026lt;\u0026lt;domain\u0026gt;\u0026gt;.key -out /etc/nginx/ssl/\u0026lt;\u0026lt;domain\u0026gt;\u0026gt;.cer copy the existing server block to the bottom of the nginx config file at sudo vi /etc/nginx/conf.d/revers-proxy.conf update the new block with the new domain name (see below) save and quit test nginx nginx -t Issue the certificate with the command below ./acme.sh --issue -d \u0026lt;\u0026lt;domain\u0026gt;\u0026gt; --server letsencrypt --nginx install certificate with the command below: .acme.sh/acme.sh --install-cert -d \u0026lt;\u0026lt;domain\u0026gt;\u0026gt; \\\r\u0026gt; --key-file /etc/nginx/ssl/\u0026lt;\u0026lt;domain\u0026gt;\u0026gt;.key \\\r\u0026gt; --fullchain-file /etc/nginx/ssl/\u0026lt;\u0026lt;domain\u0026gt;\u0026gt;.cer \\\r\u0026gt; --reloadcmd \u0026#34;service nginx restart\u0026#34; server block server {\rlisten 80;\rserver_name \u0026lt;\u0026lt;domain\u0026gt;\u0026gt; www.\u0026lt;\u0026lt;domain\u0026gt;\u0026gt;; ## server name can be replaced by nginx server IP address (ex. 192.168.1.132)\rlocation / {\rproxy_pass http://23.138.40.37:80; ## backend-server can be replaced with IP address of web sever to be proxied (ex. http192.168.1.37:80)\rproxy_set_header Host $host;\rproxy_set_header X-Real-IP $remote_addr;\rproxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\r}\rlisten 443 ssl;\rssl_certificate_key /etc/nginx/ssl/\u0026lt;\u0026lt;domain\u0026gt;\u0026gt;.key;\rssl_certificate /etc/nginx/ssl/\u0026lt;\u0026lt;domain\u0026gt;\u0026gt;.crt;\r} ","keywords":["nginx","ssl","gophish"],"articleBody":" login as root on the nginx server create a new openssl certificate sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/\u003c\u003e.key -out /etc/nginx/ssl/\u003c\u003e.cer copy the existing server block to the bottom of the nginx config file at sudo vi /etc/nginx/conf.d/revers-proxy.conf update the new block with the new domain name (see below) save and quit test nginx nginx -t Issue the certificate with the command below ./acme.sh --issue -d \u003c\u003e --server letsencrypt --nginx install certificate with the command below: .acme.sh/acme.sh --install-cert -d \u003c\u003e \\\r\u003e --key-file /etc/nginx/ssl/\u003c\u003e.key \\\r\u003e --fullchain-file /etc/nginx/ssl/\u003c\u003e.cer \\\r\u003e --reloadcmd \"service nginx restart\" server block server {\rlisten 80;\rserver_name \u003c\u003e www.\u003c\u003e; ## server name can be replaced by nginx server IP address (ex. 192.168.1.132)\rlocation / {\rproxy_pass http://23.138.40.37:80; ## backend-server can be replaced with IP address of web sever to be proxied (ex. http192.168.1.37:80)\rproxy_set_header Host $host;\rproxy_set_header X-Real-IP $remote_addr;\rproxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\r}\rlisten 443 ssl;\rssl_certificate_key /etc/nginx/ssl/\u003c\u003e.key;\rssl_certificate /etc/nginx/ssl/\u003c\u003e.crt;\r} ","wordCount":"159","inLanguage":"en","image":"https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E","datePublished":"2024-12-03T00:00:00Z","dateModified":"2024-12-03T00:00:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://examplesite.com/posts/create-new-ssl-cert-on-gophish+nginx/"},"publisher":{"@type":"Organization","name":"Good-Life Sec","logo":{"@type":"ImageObject","url":"https://examplesite.com/%3Clink%20/%20abs%20url%3E"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)"><img src=https://examplesite.com/apple-touch-icon.png alt aria-label=logo height=35>Home</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://examplesite.com/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://examplesite.com/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://examplesite.com/search/ title=Search><span>Search</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">Create new SSL cert on gophish+nginx</h1><div class=post-meta><span title='2024-12-03 00:00:00 +0000 UTC'>December 3, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;159 words&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://github.com/%3cpath_to_repo%3e/content/posts/Create%20new%20SSL%20cert%20on%20gophish+nginx.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><ol><li>login as root on the nginx server</li><li>create a new openssl certificate
+<code>sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/&lt;&lt;domain>>.key -out /etc/nginx/ssl/&lt;&lt;domain>>.cer</code></li><li>copy the existing server block to the bottom of the nginx config file at <code>sudo vi /etc/nginx/conf.d/revers-proxy.conf</code></li><li>update the new block with the new domain name (see below)</li><li>save and quit</li><li>test nginx <code>nginx -t</code></li><li>Issue the certificate with the command below
+<code>./acme.sh --issue -d &lt;&lt;domain>> --server letsencrypt --nginx</code></li><li>install certificate with the command below:</li></ol><pre tabindex=0><code>.acme.sh/acme.sh --install-cert -d &lt;&lt;domain&gt;&gt; \
+&gt; --key-file /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.key \
+&gt; --fullchain-file /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.cer \
+&gt; --reloadcmd &#34;service nginx restart&#34;
+</code></pre><h3 id=server-block>server block<a hidden class=anchor aria-hidden=true href=#server-block>#</a></h3><pre tabindex=0><code>server {
+        listen 80;
+        server_name &lt;&lt;domain&gt;&gt; www.&lt;&lt;domain&gt;&gt;; ## server name can be replaced by nginx server IP address (ex. 192.168.1.132)
+
+        location / {
+                proxy_pass http://23.138.40.37:80; ## backend-server can be replaced with IP address of web sever to be proxied (ex. http192.168.1.37:80)
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+        listen 443 ssl;
+        ssl_certificate_key /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.key;
+        ssl_certificate /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.crt;
+}
+</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://examplesite.com/tags/nginx/>Nginx</a></li><li><a href=https://examplesite.com/tags/ssl/>Ssl</a></li><li><a href=https://examplesite.com/tags/gophish/>Gophish</a></li></ul><nav class=paginav><a class=prev href=https://examplesite.com/posts/phishpaste/><span class=title>« Prev</span><br><span>PhishPaste</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2024 <a href=https://examplesite.com/>Good-Life Sec</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Nginx on Good-Life Sec</title>
+    <link>https://examplesite.com/tags/nginx/</link>
+    <description>Recent content in Nginx on Good-Life Sec</description>
+    <image>
+      <title>Good-Life Sec</title>
+      <url>https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.139.0</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 03 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://examplesite.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create new SSL cert on gophish&#43;nginx</title>
+      <link>https://examplesite.com/posts/create-new-ssl-cert-on-gophish&#43;nginx/</link>
+      <pubDate>Tue, 03 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://examplesite.com/posts/create-new-ssl-cert-on-gophish&#43;nginx/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;login as root on the nginx server&lt;/li&gt;
+&lt;li&gt;create a new openssl certificate
+&lt;code&gt;sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/&amp;lt;&amp;lt;domain&amp;gt;&amp;gt;.key -out /etc/nginx/ssl/&amp;lt;&amp;lt;domain&amp;gt;&amp;gt;.cer&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;copy the existing server block to the bottom of the nginx config file at &lt;code&gt;sudo vi /etc/nginx/conf.d/revers-proxy.conf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;update the new block with the new domain name (see below)&lt;/li&gt;
+&lt;li&gt;save and quit&lt;/li&gt;
+&lt;li&gt;test nginx &lt;code&gt;nginx -t&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Issue the certificate with the command below
+&lt;code&gt;./acme.sh --issue -d &amp;lt;&amp;lt;domain&amp;gt;&amp;gt; --server letsencrypt --nginx&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;install certificate with the command below:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.acme.sh/acme.sh --install-cert -d &amp;lt;&amp;lt;domain&amp;gt;&amp;gt; \
+&amp;gt; --key-file /etc/nginx/ssl/&amp;lt;&amp;lt;domain&amp;gt;&amp;gt;.key \
+&amp;gt; --fullchain-file /etc/nginx/ssl/&amp;lt;&amp;lt;domain&amp;gt;&amp;gt;.cer \
+&amp;gt; --reloadcmd &amp;#34;service nginx restart&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;server-block&#34;&gt;server block&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;server {
+        listen 80;
+        server_name &amp;lt;&amp;lt;domain&amp;gt;&amp;gt; www.&amp;lt;&amp;lt;domain&amp;gt;&amp;gt;; ## server name can be replaced by nginx server IP address (ex. 192.168.1.132)
+
+        location / {
+                proxy_pass http://23.138.40.37:80; ## backend-server can be replaced with IP address of web sever to be proxied (ex. http192.168.1.37:80)
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+        listen 443 ssl;
+        ssl_certificate_key /etc/nginx/ssl/&amp;lt;&amp;lt;domain&amp;gt;&amp;gt;.key;
+        ssl_certificate /etc/nginx/ssl/&amp;lt;&amp;lt;domain&amp;gt;&amp;gt;.crt;
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>
