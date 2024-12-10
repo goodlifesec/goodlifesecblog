@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Reference on Good-Life Sec</title>
-    <link>https://examplesite.com/categories/reference/</link>
+    <link>https://goodlifesec.com/categories/reference/</link>
     <description>Recent content in Reference on Good-Life Sec</description>
     <image>
       <title>Good-Life Sec</title>
-      <url>https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://goodlifesec.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://goodlifesec.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.139.0</generator>
     <language>en</language>
     <lastBuildDate>Wed, 04 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://examplesite.com/categories/reference/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://goodlifesec.com/categories/reference/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PhishPaste</title>
-      <link>https://examplesite.com/posts/phishpaste/</link>
+      <link>https://goodlifesec.com/posts/phishpaste/</link>
       <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://examplesite.com/posts/phishpaste/</guid>
+      <guid>https://goodlifesec.com/posts/phishpaste/</guid>
       <description>&lt;p&gt;Phishpaste is a tool used to copy landing pages, sending profiles, and email templates between users in gophish&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;set $DATABASE_URL &lt;code&gt;export DATABASE_URL=&#39;&amp;lt;&amp;lt;gophishdbuser&amp;gt;&amp;gt;:&amp;lt;&amp;lt;gophishdbpwd&amp;gt;&amp;gt;@(&amp;lt;&amp;lt;IPADDRESS&amp;gt;&amp;gt;:3306)/gophish?charset=utf8&amp;amp;parseTime=True&amp;amp;loc=UTC&#39;&lt;/code&gt;&lt;/li&gt;
@@ -25,13 +25,13 @@
 &lt;li&gt;List gophish users &lt;code&gt;go run phishpaste.go --list-users&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Copy data &lt;code&gt;go run phishpaste.go --source &amp;lt;&amp;lt;sourceuser&amp;gt;&amp;gt; --destination &amp;lt;&amp;lt;destinationuser&amp;gt;&amp;gt; --email-templates --landing-pages --sending-profiles&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img alt=&#34;Image Description&#34; loading=&#34;lazy&#34; src=&#34;https://examplesite.com/images/PhishPaste-20241210134632470.webp&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img alt=&#34;Image Description&#34; loading=&#34;lazy&#34; src=&#34;https://goodlifesec.com/images/PhishPaste-20241210134632470.webp&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Create new SSL cert on gophish&#43;nginx</title>
-      <link>https://examplesite.com/posts/create-new-ssl-cert-on-gophish&#43;nginx/</link>
+      <link>https://goodlifesec.com/posts/create-new-ssl-cert-on-gophish&#43;nginx/</link>
       <pubDate>Tue, 03 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://examplesite.com/posts/create-new-ssl-cert-on-gophish&#43;nginx/</guid>
+      <guid>https://goodlifesec.com/posts/create-new-ssl-cert-on-gophish&#43;nginx/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;login as root on the nginx server&lt;/li&gt;
 &lt;li&gt;create a new openssl certificate
