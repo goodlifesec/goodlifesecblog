@@ -61,10 +61,10 @@ menu:
       url: /tags/
       weight: 20
     - name: Archive
-      url: archive/
+      url: /archives/
       weight: 30
     - name: Search
-      url: search/
+      url: /search/
       weight: 40
 
 outputs:
