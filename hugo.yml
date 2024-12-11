@@ -34,7 +34,7 @@ params:
       This is part blog for whatever I may find interesting and part documentation repository so that I can start to organize my thoughts and the loads of docs I have sitting around.
 
   editPost:
-    URL: "https://github.com/goodlifesec/goodlifesecblog/tree/master/content/posts/"
+    URL: "https://github.com/goodlifesec/goodlifesecblog/tree/master/content/"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
