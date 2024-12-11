@@ -2,3 +2,7 @@ baseURL: "https://goodlifesec.com/"
 languageCode: en-us
 title: Good-Life Sec
 theme: PaperMod
+
+params:
+  assets:
+    disableFingerprinting: true
