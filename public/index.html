@@ -20,6 +20,7 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <link rel="alternate" type="application/rss+xml" href="https://goodlifesec.com/index.xml">
+<link rel="alternate" type="application/json" href="https://goodlifesec.com/index.json">
 <link rel="alternate" hreflang="en" href="https://goodlifesec.com/">
 <noscript>
     <style>
@@ -121,12 +122,41 @@
             </div>
         </div>
         <ul id="menu">
+            <li>
+                <a href="https://goodlifesec.com/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://goodlifesec.com/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://goodlifesec.com/search/" title="Search">
+                    <span>Search</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
 <main class="main"> 
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>Good-Life Sec</h1>
+    </header>
+    <div class="entry-content">
+        Thanks for dropping by!
+This is part blog for whatever I may find interesting and part documentation repository so that I can start to organize my thoughts and the loads of docs I have sitting around.
+    </div>
+    <footer class="entry-footer">
+        <div class="social-icons" >
+</div>
 
-<article class="first-entry"> 
+    </footer>
+</article>
+
+<article class="post-entry"> 
   <header class="entry-header">
     <h2 class="entry-hint-parent">PhishPaste
     </h2>
@@ -135,7 +165,7 @@
     <p>Phishpaste is a tool used to copy landing pages, sending profiles, and email templates between users in gophish
 set $DATABASE_URL export DATABASE_URL=&#39;&lt;&lt;gophishdbuser&gt;&gt;:&lt;&lt;gophishdbpwd&gt;&gt;@(&lt;&lt;IPADDRESS&gt;&gt;:3306)/gophish?charset=utf8&amp;parseTime=True&amp;loc=UTC&#39; change to the gophish directory cd /root/gophish/ List gophish users go run phishpaste.go --list-users Copy data go run phishpaste.go --source &lt;&lt;sourceuser&gt;&gt; --destination &lt;&lt;destinationuser&gt;&gt; --email-templates --landing-pages --sending-profiles </p>
   </div>
-  <footer class="entry-footer"><span title='2024-12-04 00:00:00 +0000 UTC'>December 4, 2024</span></footer>
+  <footer class="entry-footer"><span title='2024-12-04 00:00:00 +0000 UTC'>December 4, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;48 words</footer>
   <a class="entry-link" aria-label="post link to PhishPaste" href="https://goodlifesec.com/posts/phishpaste/"></a>
 </article>
 
@@ -147,7 +177,7 @@ set $DATABASE_URL export DATABASE_URL=&#39;&lt;&lt;gophishdbuser&gt;&gt;:&lt;&lt
   <div class="entry-content">
     <p> login as root on the nginx server create a new openssl certificate sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.key -out /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.cer copy the existing server block to the bottom of the nginx config file at sudo vi /etc/nginx/conf.d/revers-proxy.conf update the new block with the new domain name (see below) save and quit test nginx nginx -t Issue the certificate with the command below ./acme.sh --issue -d &lt;&lt;domain&gt;&gt; --server letsencrypt --nginx install certificate with the command below: .acme.sh/acme.sh --install-cert -d &lt;&lt;domain&gt;&gt; \&gt; --key-file /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.key \&gt; --fullchain-file /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.cer \&gt; --reloadcmd &#34;service nginx restart&#34; server block server {listen 80;server_name &lt;&lt;domain&gt;&gt; www.&lt;&lt;domain&gt;&gt;; ## server name can be replaced by nginx server IP address (ex. 192.168.1.132)location / {proxy_pass http://23.138.40.37:80; ## backend-server can be replaced with IP address of web sever to be proxied (ex. http192.168.1.37:80)proxy_set_header Host $host;proxy_set_header X-Real-IP $remote_addr;proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;}listen 443 ssl;ssl_certificate_key /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.key;ssl_certificate /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.crt;} </p>
   </div>
-  <footer class="entry-footer"><span title='2024-12-03 00:00:00 +0000 UTC'>December 3, 2024</span></footer>
+  <footer class="entry-footer"><span title='2024-12-03 00:00:00 +0000 UTC'>December 3, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;159 words</footer>
   <a class="entry-link" aria-label="post link to Create new SSL cert on gophish&#43;nginx" href="https://goodlifesec.com/posts/create-new-ssl-cert-on-gophish&#43;nginx/"></a>
 </article>
     </main>
