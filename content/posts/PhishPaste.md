@@ -13,4 +13,4 @@ Phishpaste is a tool used to copy landing pages, sending profiles, and email tem
 3. List gophish users `go run phishpaste.go --list-users`
 4. Copy data `go run phishpaste.go --source <<sourceuser>> --destination <<destinationuser>> --email-templates --landing-pages --sending-profiles`
 
-![Image Description](/images/PhishPaste-20241210134632470.webp)
+![[PhishPaste-20241210134632470.webp]]

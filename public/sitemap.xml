@@ -3,10 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://goodlifesec.com/categories/</loc>
-    <lastmod>2024-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://goodlifesec.com/</loc>
-    <lastmod>2024-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://goodlifesec.com/posts/how-having-more-kids-is-easier/</loc>
+    <lastmod>2024-12-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://goodlifesec.com/tags/kids/</loc>
+    <lastmod>2024-12-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://goodlifesec.com/tags/parenting/</loc>
+    <lastmod>2024-12-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://goodlifesec.com/categories/parenting/</loc>
+    <lastmod>2024-12-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://goodlifesec.com/posts/</loc>
+    <lastmod>2024-12-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://goodlifesec.com/tags/</loc>
+    <lastmod>2024-12-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://goodlifesec.com/tags/gophish/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
@@ -14,13 +32,7 @@
     <loc>https://goodlifesec.com/posts/phishpaste/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://goodlifesec.com/posts/</loc>
-    <lastmod>2024-12-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://goodlifesec.com/categories/reference/</loc>
-    <lastmod>2024-12-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://goodlifesec.com/tags/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://goodlifesec.com/posts/create-new-ssl-cert-on-gophish&#43;nginx/</loc>

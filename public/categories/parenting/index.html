@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Posts | Good-Life Sec</title>
+<title>Parenting | Good-Life Sec</title>
 <meta name="keywords" content="">
-<meta name="description" content="Posts - Good-Life Sec">
+<meta name="description" content="">
 <meta name="author" content="">
-<link rel="canonical" href="https://goodlifesec.com/posts/">
+<link rel="canonical" href="https://goodlifesec.com/categories/parenting/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://goodlifesec.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://goodlifesec.com/favicon-16x16.png">
@@ -18,8 +18,8 @@
 <link rel="mask-icon" href="https://goodlifesec.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://goodlifesec.com/posts/index.xml">
-<link rel="alternate" hreflang="en" href="https://goodlifesec.com/posts/">
+<link rel="alternate" type="application/rss+xml" href="https://goodlifesec.com/categories/parenting/index.xml">
+<link rel="alternate" hreflang="en" href="https://goodlifesec.com/categories/parenting/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,30 +56,15 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://goodlifesec.com/posts/">
+</noscript><meta property="og:url" content="https://goodlifesec.com/categories/parenting/">
   <meta property="og:site_name" content="Good-Life Sec">
-  <meta property="og:title" content="Posts">
+  <meta property="og:title" content="Parenting">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Posts">
+<meta name="twitter:title" content="Parenting">
 <meta name="twitter:description" content="">
 
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://goodlifesec.com/posts/"
-    }
-  ]
-}
-</script>
 </head>
 
 <body class="list" id="top">
@@ -146,10 +131,10 @@
     </nav>
 </header>
 <main class="main"> 
-<header class="page-header"><div class="breadcrumbs"><a href="https://goodlifesec.com/">Home</a></div>
+<header class="page-header"><div class="breadcrumbs"><a href="https://goodlifesec.com/">Home</a>&nbsp;»&nbsp;<a href="https://goodlifesec.com/categories/">Categories</a></div>
   <h1>
-    Posts
-    <a href="/posts/index.xml" title="RSS" aria-label="RSS">
+    Parenting
+    <a href="/categories/parenting/index.xml" title="RSS" aria-label="RSS">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
         stroke-linecap="round" stroke-linejoin="round" height="23">
         <path d="M4 11a9 9 0 0 1 9 9" />
@@ -160,7 +145,7 @@
   </h1>
 </header>
 
-<article class="post-entry"> 
+<article class="post-entry tag-entry"> 
   <header class="entry-header">
     <h2 class="entry-hint-parent">How having more kids is easier
     </h2>
@@ -171,32 +156,6 @@
   </div>
   <footer class="entry-footer"><span title='2024-12-11 00:00:00 +0000 UTC'>December 11, 2024</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;779 words</footer>
   <a class="entry-link" aria-label="post link to How having more kids is easier" href="https://goodlifesec.com/posts/how-having-more-kids-is-easier/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">PhishPaste
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Phishpaste is a tool used to copy landing pages, sending profiles, and email templates between users in gophish
-set $DATABASE_URL export DATABASE_URL=&#39;&lt;&lt;gophishdbuser&gt;&gt;:&lt;&lt;gophishdbpwd&gt;&gt;@(&lt;&lt;IPADDRESS&gt;&gt;:3306)/gophish?charset=utf8&amp;parseTime=True&amp;loc=UTC&#39; change to the gophish directory cd /root/gophish/ List gophish users go run phishpaste.go --list-users Copy data go run phishpaste.go --source &lt;&lt;sourceuser&gt;&gt; --destination &lt;&lt;destinationuser&gt;&gt; --email-templates --landing-pages --sending-profiles ![[PhishPaste-20241210134632470.webp]]
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2024-12-04 00:00:00 +0000 UTC'>December 4, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;49 words</footer>
-  <a class="entry-link" aria-label="post link to PhishPaste" href="https://goodlifesec.com/posts/phishpaste/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Create new SSL cert on gophish&#43;nginx
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> login as root on the nginx server create a new openssl certificate sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.key -out /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.cer copy the existing server block to the bottom of the nginx config file at sudo vi /etc/nginx/conf.d/revers-proxy.conf update the new block with the new domain name (see below) save and quit test nginx nginx -t Issue the certificate with the command below ./acme.sh --issue -d &lt;&lt;domain&gt;&gt; --server letsencrypt --nginx install certificate with the command below: .acme.sh/acme.sh --install-cert -d &lt;&lt;domain&gt;&gt; \ &gt; --key-file /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.key \ &gt; --fullchain-file /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.cer \ &gt; --reloadcmd &#34;service nginx restart&#34; server block server { listen 80; server_name &lt;&lt;domain&gt;&gt; www.&lt;&lt;domain&gt;&gt;; ## server name can be replaced by nginx server IP address (ex. 192.168.1.132) location / { proxy_pass http://23.138.40.37:80; ## backend-server can be replaced with IP address of web sever to be proxied (ex. http192.168.1.37:80) proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; } listen 443 ssl; ssl_certificate_key /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.key; ssl_certificate /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.crt; } </p>
-  </div>
-  <footer class="entry-footer"><span title='2024-12-03 00:00:00 +0000 UTC'>December 3, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;159 words</footer>
-  <a class="entry-link" aria-label="post link to Create new SSL cert on gophish&#43;nginx" href="https://goodlifesec.com/posts/create-new-ssl-cert-on-gophish&#43;nginx/"></a>
 </article>
     </main>
     
