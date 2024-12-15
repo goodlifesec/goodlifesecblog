@@ -20,7 +20,7 @@
 &lt;li&gt;List gophish users &lt;code&gt;go run phishpaste.go --list-users&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Copy data &lt;code&gt;go run phishpaste.go --source &amp;lt;&amp;lt;sourceuser&amp;gt;&amp;gt; --destination &amp;lt;&amp;lt;destinationuser&amp;gt;&amp;gt; --email-templates --landing-pages --sending-profiles&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img alt=&#34;Image Description&#34; loading=&#34;lazy&#34; src=&#34;https://goodlifesec.com/images/PhishPaste-20241210134632470.webp&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;![[PhishPaste-20241210134632470.webp]]&lt;/p&gt;</description>
     </item>
     <item>
       <title>Create new SSL cert on gophish&#43;nginx</title>

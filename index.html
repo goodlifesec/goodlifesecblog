@@ -163,14 +163,28 @@ This is part blog for whatever I may find interesting and part documentation rep
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">How having more kids is easier
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>People always seem to be shocked to hear that parenting seems to get easier as you have more kids. This isn’t to say that it doesn’t have it’s own challenges or that parenting is ever easy, but there are some definite things that change as your family grows which help to make parenting seem easier than it does when you only have your first or even your first two children.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-12-11 00:00:00 +0000 UTC'>December 11, 2024</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;779 words</footer>
+  <a class="entry-link" aria-label="post link to How having more kids is easier" href="https://goodlifesec.com/posts/how-having-more-kids-is-easier/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">PhishPaste
     </h2>
   </header>
   <div class="entry-content">
     <p>Phishpaste is a tool used to copy landing pages, sending profiles, and email templates between users in gophish
-set $DATABASE_URL export DATABASE_URL=&#39;&lt;&lt;gophishdbuser&gt;&gt;:&lt;&lt;gophishdbpwd&gt;&gt;@(&lt;&lt;IPADDRESS&gt;&gt;:3306)/gophish?charset=utf8&amp;parseTime=True&amp;loc=UTC&#39; change to the gophish directory cd /root/gophish/ List gophish users go run phishpaste.go --list-users Copy data go run phishpaste.go --source &lt;&lt;sourceuser&gt;&gt; --destination &lt;&lt;destinationuser&gt;&gt; --email-templates --landing-pages --sending-profiles </p>
+set $DATABASE_URL export DATABASE_URL=&#39;&lt;&lt;gophishdbuser&gt;&gt;:&lt;&lt;gophishdbpwd&gt;&gt;@(&lt;&lt;IPADDRESS&gt;&gt;:3306)/gophish?charset=utf8&amp;parseTime=True&amp;loc=UTC&#39; change to the gophish directory cd /root/gophish/ List gophish users go run phishpaste.go --list-users Copy data go run phishpaste.go --source &lt;&lt;sourceuser&gt;&gt; --destination &lt;&lt;destinationuser&gt;&gt; --email-templates --landing-pages --sending-profiles ![[PhishPaste-20241210134632470.webp]]
+</p>
   </div>
-  <footer class="entry-footer"><span title='2024-12-04 00:00:00 +0000 UTC'>December 4, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;48 words</footer>
+  <footer class="entry-footer"><span title='2024-12-04 00:00:00 +0000 UTC'>December 4, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;49 words</footer>
   <a class="entry-link" aria-label="post link to PhishPaste" href="https://goodlifesec.com/posts/phishpaste/"></a>
 </article>
 
@@ -180,7 +194,7 @@ set $DATABASE_URL export DATABASE_URL=&#39;&lt;&lt;gophishdbuser&gt;&gt;:&lt;&lt
     </h2>
   </header>
   <div class="entry-content">
-    <p> login as root on the nginx server create a new openssl certificate sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.key -out /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.cer copy the existing server block to the bottom of the nginx config file at sudo vi /etc/nginx/conf.d/revers-proxy.conf update the new block with the new domain name (see below) save and quit test nginx nginx -t Issue the certificate with the command below ./acme.sh --issue -d &lt;&lt;domain&gt;&gt; --server letsencrypt --nginx install certificate with the command below: .acme.sh/acme.sh --install-cert -d &lt;&lt;domain&gt;&gt; \&gt; --key-file /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.key \&gt; --fullchain-file /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.cer \&gt; --reloadcmd &#34;service nginx restart&#34; server block server {listen 80;server_name &lt;&lt;domain&gt;&gt; www.&lt;&lt;domain&gt;&gt;; ## server name can be replaced by nginx server IP address (ex. 192.168.1.132)location / {proxy_pass http://23.138.40.37:80; ## backend-server can be replaced with IP address of web sever to be proxied (ex. http192.168.1.37:80)proxy_set_header Host $host;proxy_set_header X-Real-IP $remote_addr;proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;}listen 443 ssl;ssl_certificate_key /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.key;ssl_certificate /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.crt;} </p>
+    <p> login as root on the nginx server create a new openssl certificate sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.key -out /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.cer copy the existing server block to the bottom of the nginx config file at sudo vi /etc/nginx/conf.d/revers-proxy.conf update the new block with the new domain name (see below) save and quit test nginx nginx -t Issue the certificate with the command below ./acme.sh --issue -d &lt;&lt;domain&gt;&gt; --server letsencrypt --nginx install certificate with the command below: .acme.sh/acme.sh --install-cert -d &lt;&lt;domain&gt;&gt; \ &gt; --key-file /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.key \ &gt; --fullchain-file /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.cer \ &gt; --reloadcmd &#34;service nginx restart&#34; server block server { listen 80; server_name &lt;&lt;domain&gt;&gt; www.&lt;&lt;domain&gt;&gt;; ## server name can be replaced by nginx server IP address (ex. 192.168.1.132) location / { proxy_pass http://23.138.40.37:80; ## backend-server can be replaced with IP address of web sever to be proxied (ex. http192.168.1.37:80) proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; } listen 443 ssl; ssl_certificate_key /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.key; ssl_certificate /etc/nginx/ssl/&lt;&lt;domain&gt;&gt;.crt; } </p>
   </div>
   <footer class="entry-footer"><span title='2024-12-03 00:00:00 +0000 UTC'>December 3, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;159 words</footer>
   <a class="entry-link" aria-label="post link to Create new SSL cert on gophish&#43;nginx" href="https://goodlifesec.com/posts/create-new-ssl-cert-on-gophish&#43;nginx/"></a>
